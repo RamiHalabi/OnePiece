@@ -8,6 +8,7 @@ app.use(cors());
 
 const chapterListURL = "https://onepiecechapters.com/mangas/5/one-piece";
 
+// load one piece chapter list
 request(chapterListURL, (error, response, html) => {
   if (!error && response.statusCode === 200) {
     const $ = cheerio.load(html); // load document
@@ -22,7 +23,9 @@ request(chapterListURL, (error, response, html) => {
     // User hit 'GO!' after typing in chapter
     app.get("/chapter/:id", (req, res) => {
       //get chapter number and corresponding chapter URL from the request
-      const chapter = req.params.id;
+      const chapterSelect =
+        req.params.id == 9999 ? chapters.length - 11 : req.params.id;
+      const chapter = chapters.length - chapterSelect - 6;
       const chapterURL = "https://onepiecechapters.com" + chapters[chapter];
 
       // get pages from selected chapters' url
@@ -47,5 +50,5 @@ request(chapterListURL, (error, response, html) => {
 });
 
 app.listen(8000, () => {
-  console.log("API server listening on port 8000");
+  console.log("\x1b[1m\x1b[32m%s\x1b[0m", "API server listening on port 8000");
 });
