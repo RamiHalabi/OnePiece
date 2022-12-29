@@ -1,18 +1,21 @@
-
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* ::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar in Chrome, Safari, and Opera */
 }
 
 .Wrapper {
-  margin-top: 15rem;
+  z-index: 10;
+  margin-top: 10%;
+  margin-bottom: 15%;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .HomePage {
-
   text-align: center;
-  background: linear-gradient(#1b0bc4, #ffffff);
+  background-image: url("wallpaperflare.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -27,7 +30,7 @@
   height: 2rem;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 8px 0 0 8px;
   transition: all 0.2s;
   font-size: large;
@@ -36,51 +39,49 @@
 
 .chapterInput:focus {
   outline: none;
-
 }
 
 .chapterInput::placeholder {
   color: #808080;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .h1 {
-  margin-bottom: 10rem;
+  margin-bottom: 25%;
 }
 
 .go {
   background-color: rgb(83, 179, 83);
   padding: 10px;
-  height: 54px;
+  height: 55px;
   color: white;
   font-size: 16px;
   border: none;
   border-radius: 0 8px 8px 0;
   transition: all 0.1s;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
   font-weight: bold;
 }
 
 .go:hover {
   background-color: rgb(53, 145, 53);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  }
+}
 
 .go:active {
-  transform: translateY(2px); 
+  transform: translateY(1.5px);
   box-shadow: none;
 }
 
 .img {
-  object-fit:contain;
-  max-width: 40%;
-  filter: blur(8px);
+  object-fit: contain;
+  filter: blur(6px);
   transition: filter 0.2s;
 }
 
@@ -88,7 +89,8 @@ img:hover {
   filter: none;
 }
 
-.reloadBtn, .LCBtn {
+.reloadBtn,
+.LCBtn {
   position: fixed;
   color: #ffffff;
   font-weight: bold;
@@ -96,22 +98,24 @@ img:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: all 0.15s;
-  padding: 5px 10px;
-  font-size: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
   top: 5%;
-  transform: translateY(-5%);
+  transform: scale(1);
+  border-radius: 3px;
+  zoom: normal;
 }
 
 .reloadBtn {
   right: 0;
   background-color: #bd4242;
-  border-radius: 25px 0px 0px 25px;
+  text-shadow: #8a2e2e 2px 2px;
 }
 
 .LCBtn {
   left: 0;
-  background-color: #bcbcbc;
-  border-radius: 0px 25px 25px 0px;
+  background-color: #8f91e7;
+  text-shadow: #7374b8 2px 2px;
 }
 
 .reloadBtn:hover {
@@ -120,13 +124,12 @@ img:hover {
 }
 
 .LCBtn:hover {
-  background-color: #6d6d6d;
+  background-color: #6b6de2;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-.reloadBtn:active, .LCBtn:active {
+.reloadBtn:active,
+.LCBtn:active {
   box-shadow: none;
+  transform: translateY(1px);
 }
-
-
-

@@ -24,7 +24,11 @@ request(chapterListURL, (error, response, html) => {
     app.get("/chapter/:id", (req, res) => {
       //get chapter number and corresponding chapter URL from the request
       const chapterSelect =
-        req.params.id == 9999 ? chapters.length - 11 : req.params.id;
+        req.params.id == 9999
+          ? chapters.length - 11
+          : req.params.id < 1055
+          ? req.params.id - 4
+          : req.params.id;
       const chapter = chapters.length - chapterSelect - 6;
       const chapterURL = "https://onepiecechapters.com" + chapters[chapter];
 
@@ -34,11 +38,18 @@ request(chapterListURL, (error, response, html) => {
           const $ = cheerio.load(html); // load document
           const images = $("img"); // all imgs at URL
           const imageUrls = []; // chapter pages array
-
+          console.log(chapterURL);
           // put each image on website into array
           images.each((i, image) => {
             const src = $(image).attr("src");
+
+            // regex checking is not entierely working. Some chapters have different URLs that need to be handled
+            //const match = src.match(/_(\d{3}).png/);
+            //if(match){
+
             imageUrls.push(src);
+
+            //}
           });
           res.send(imageUrls);
         } else {
