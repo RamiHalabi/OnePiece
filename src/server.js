@@ -8,6 +8,14 @@ app.use(cors());
 
 const chapterListURL = "https://onepiecechapters.com/mangas/5/one-piece";
 
+//TODO check image url for invalid images using regex
+const validImage = (url) => {
+  // regex checks that the image is valid, add to array
+  const match = url.match(/_(\d{3}).png/);
+
+  return false;
+};
+
 // load one piece chapter list
 request(chapterListURL, (error, response, html) => {
   if (!error && response.statusCode === 200) {
@@ -42,13 +50,8 @@ request(chapterListURL, (error, response, html) => {
           // put each image on website into array
           images.each((i, image) => {
             const src = $(image).attr("src");
-
-            // regex checking is not entierely working. Some chapters have different URLs that need to be handled
-            //const match = src.match(/_(\d{3}).png/);
-            //if(match){
-
+            //if(validImage(src)){
             imageUrls.push(src);
-
             //}
           });
           res.send(imageUrls);

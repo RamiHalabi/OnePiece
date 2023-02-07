@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import "./App.css";
 import $ from "jquery";
+import title from "./onepiece.png";
 
 // Homepage
 function App() {
@@ -11,7 +12,6 @@ function App() {
   // Disable Up and Down Arrows on Keyboard
   $("input[type=number]").on("keydown", function (e) {
     var key = e.key;
-    console.log(key);
     if (key === "ArrowUp" || key === "ArrowDown") {
       e.preventDefault();
     } else {
@@ -50,25 +50,56 @@ function App() {
     setChapter([]);
   };
 
+  // various UI buttons
+  const ChapterBTNS = [
+    <>
+      <button onClick={latestChapter} className="LCBtn">
+        Latest Chapter
+      </button>
+    </>,
+    <>
+      <button className="newChapter" onClick={newChapter}>
+        New Chapter
+      </button>
+    </>,
+  ];
+
+  // error handler that checks for invalid search querys
+  const validChapter = () => {
+    // TODO: verify that user searches for a "real" chapter. No chapters below 0, or greater than the current chapter can be searched for.
+    // will need to recieve a response from server.js to do this.
+    // want to initiate animation upon invalid chapter for user experience
+  };
+
   return (
     <>
       <div className="HomePage">
         <div className="Wrapper">
           {chapter.length > 1 ? (
-            chapter.map((imgs) => (
-              <div>
-                <img src={imgs} className="img" title="OP Page" alt="Page" />
-              </div>
-            ))
+            <>
+              {ChapterBTNS[1]}
+              {chapter.map((imgs) => (
+                <div>
+                  <img src={imgs} className="img" title="OP Page" alt="Page" />
+                </div>
+              ))}
+              {ChapterBTNS[1]}
+            </>
           ) : (
             <div>
-              <h1 className="h1">One Piece Manga</h1>
+              <div>
+                <img
+                  src={title}
+                  title="One Piece Manga"
+                  alt="OP Manga"
+                  className="titleimg"
+                ></img>
+              </div>
               <input
                 id="input"
                 className="chapterInput"
                 type="number"
                 min="1"
-                max="1090"
                 onWheel={(e) => e.target.blur()}
                 onChange={handleChange}
                 placeholder="Enter Chapter #"
@@ -77,15 +108,11 @@ function App() {
                 {" "}
                 GO!
               </button>
+              <div />
+              {ChapterBTNS}
             </div>
           )}
         </div>
-        <button onClick={latestChapter} className="LCBtn">
-          Latest Chapter
-        </button>
-        <button className="reloadBtn" onClick={newChapter}>
-          New Chapter
-        </button>
       </div>
     </>
   );
