@@ -1,70 +1,30 @@
-# Getting Started with Create React App
-
+# One Piece Manga Web App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+The One Piece Manga Webapp is dedicated to delivering a user-friendly interface and seamless experience for One Piece Manga enthusiasts. Unlike other generic manga websites, this project focuses solely on providing One Piece chapters to its readers.
 
-In the project directory, you can run:
+To simplify the chapter-searching process, the webapp features a convenient "Latest Chapter" button, which enables users to quickly check and read when a new chapter has been released. My ultimate goal is to enhance the overall experience of One Piece readers, providing a dedicated platform where they can immerse themselves in their favorite manga series. 
 
-### `npm start`
+Feel more than welcome to download and run the webapp yourself! 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Demonstration
 
-### `npm test`
+To explore the homepage and see how the project functions, simply <b>click on the image</b> and you will be directed to a demonstration video on YouTube. This video will give you a better understanding of the project's features and functionality.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[<img src="https://user-images.githubusercontent.com/70310177/220190046-66036f1f-87dc-4742-8e63-6c9f096a12fd.png" width="80%">](https://youtu.be/oVrZKj5Whew "CLIK ME FOR VIDEO")
 
-### `npm run build`
+### Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository
+2. Run the app; type "npm run dev"
+3. Browse chapters!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Notes
+  Initially, the plan was to host this project on GitHub Pages as I did for my portfolio. However, during deployment, the server.js file encountered an issue in fetching images from user requests due to a lack of Cross-Origin Resource Sharing (CORS). To ensure compatibility with the website's standards, the server.js file needed to be configured properly, leading to a halt in the hosting process. However, as my primary objective was to create an app with a backend, I ultimately decided to focus on achieving that goal. 
+  
+  I was succsessful in creating my first REST-API using packages installed from NPM and then applied in javascript. Along the way I learned how to:
+   -   Scrape data with the 'Cheerio' package
+   -   Making user-defined requests to URLs and recieving responses using the 'Request' package
+   -   Filtering HTML document responses from HTTP requests
+   -   Enhancing my understanding of UI and UX design.
